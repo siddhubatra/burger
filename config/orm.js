@@ -60,13 +60,13 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        console.log(queryString);
+        console.log("the values are: " + vals);
 
         connection.query(queryString, vals, function (err, result) {
             if (err) {
                 throw err;
             }
-
+            console.log(result);
             cb(result);
         });
     },
